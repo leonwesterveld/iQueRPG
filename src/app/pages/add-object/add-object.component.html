@@ -1,0 +1,31 @@
+<div class="add-object-container">
+    <h1>Voeg een RPG-object toe</h1>
+    <form (ngSubmit)="addObject()">
+      <label>
+        Naam:
+        <input type="text" [(ngModel)]="name" name="name" required />
+      </label>
+      <label>
+        Type:
+        <select [(ngModel)]="type" name="type" required>
+          <option value="Zwaard">Zwaard</option>
+          <option value="Schild">Schild</option>
+          <option value="Boog">Boog</option>
+          <option value="Kleding">Kleding</option>
+          <option value="Potion">Potion</option>
+        </select>
+      </label>
+      <label>
+        Waarde:
+        <input type="number" [(ngModel)]="value" name="value" required />
+      </label>
+      <button type="submit">Toevoegen</button>
+    </form>
+  
+    <ul>
+      <li *ngFor="let object of objects">
+        <a [routerLink]="['/object-details', object.id]">{{ object.name }}</a>
+      </li>
+    </ul>
+  </div>
+  

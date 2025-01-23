@@ -1,0 +1,6 @@
+<div class="details-container" *ngIf="object">
+    <h1>{{ object.name }}</h1>
+    <p>Type: <span>{{ object.type }}</span></p>
+    <p>Waarde: <span>{{ object.value }}</span> goud</p>
+    <button (click)="goBack()">Terug</button>
+  </div>
